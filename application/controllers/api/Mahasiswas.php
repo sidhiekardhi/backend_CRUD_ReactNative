@@ -26,14 +26,14 @@ class Mahasiswas extends REST_Controller{
     }
 
     public function tambah_post(){
-
+        $foto= $this->uploadImage();
         
         $data= [
             'nama' => $this->post('nama'),
             'email' => $this->post('email'),
             'tgl_lahir' => $this->post('tgl_lahir'),
             'telp' => $this->post('telp'),
-
+            'image' => $foto,
             'gender' => $this->post('gender'),
             'pekerjaan' => $this->post('pekerjaan'),
             'alamat' => $this->post('alamat'),
@@ -56,14 +56,15 @@ class Mahasiswas extends REST_Controller{
     }
 
     public function update_post(){ 
-	        $id= $this->input->post('id');
+            $id= $this->input->post('id');
+            $foto= $this->uploadImage();
             $data= [
                 'id'=> $id,
                 'nama' => $this->post('nama'),
                 'email' => $this->post('email'),
                 'tgl_lahir' => $this->post('tgl_lahir'),
                 'telp' => $this->post('telp'),
-    
+                'image' => $foto,
                 'gender' => $this->post('gender'),
                 'pekerjaan' => $this->post('pekerjaan'),
                 'alamat' => $this->post('alamat'),
@@ -111,6 +112,28 @@ class Mahasiswas extends REST_Controller{
                 
                             }
         }
+    }
+
+    public function uploadImage()
+    {
+      $config['upload_path'] = './uploads/';
+      $config['allowed_types'] = 'gif|jpg|png';
+      $config['overwrite'] = true;
+      $config['max_size'] = 1024;
+
+      $this->load->library('upload');
+      $this->upload->initialize($config);
+
+      if ( ! $this->upload->do_upload('image'))
+      {
+        $error = array('error' => $this->upload->display_errors());
+         print_r($error);
+      //  $this->load->view('upload_form', $error);
+      }
+      else
+      {
+        return $this->upload->data("file_name");
+      }
     }
 
     // public function delete_delete($id=null){
