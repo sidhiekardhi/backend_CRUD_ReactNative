@@ -1,9 +1,24 @@
 <?php
 
 class Mahasiswas_model extends CI_Model {
-    public function getMahasiswas()
+
+    public function getMahasiswas($id = null)
     {
-        return $this->db->get('mahasiswas')->result_array();
+
+    //     $query = $this->db->query("select * from `tbl_user`");
+    //    return $query->result_array();
+
+        if($id=== null){
+            return $this->db->get('mahasiswas')->result_array();
+            
+        } else {
+            return $this->db->get_where('mahasiswas', ['id' => $id])->result_array();
+        }
+    }
+
+    public function getMahasiswasbyId($id)
+    {
+        return $this->db->get_where('mahasiswas', ['id' => $id])->result_array();
     }
 
     public function createMahasiswas($data)

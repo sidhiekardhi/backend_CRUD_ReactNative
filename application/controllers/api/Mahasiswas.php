@@ -25,6 +25,18 @@ class Mahasiswas extends REST_Controller{
         }
     }
 
+    public function getId_get($id=null){
+    //   $id= $this->input->get('id');
+        $mahasiswas = $this->Mahasiswas_model->getMahasiswasbyId($id);
+        if($mahasiswas > 0){
+            $this->response([
+                'status' => true,
+                'data' => $mahasiswas
+            ], REST_Controller::HTTP_OK);
+        }
+    }
+
+
     public function tambah_post(){
         $foto= $this->uploadImage();
         
@@ -126,9 +138,10 @@ class Mahasiswas extends REST_Controller{
 
       if ( ! $this->upload->do_upload('image'))
       {
-        $error = array('error' => $this->upload->display_errors());
-         print_r($error);
+        // $error = array('error' => $this->upload->display_errors());
+        //  print_r($error);
       //  $this->load->view('upload_form', $error);
+      //print_r('null');
       }
       else
       {
