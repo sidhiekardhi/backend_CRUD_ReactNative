@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2020 at 12:16 AM
+-- Generation Time: Dec 29, 2020 at 03:23 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -34,6 +34,7 @@ CREATE TABLE `mahasiswas` (
   `email` varchar(100) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
   `telp` int(11) DEFAULT NULL,
+  `image` varchar(100) DEFAULT NULL,
   `gender` varchar(40) DEFAULT NULL,
   `pekerjaan` varchar(100) DEFAULT NULL,
   `date_create` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -45,20 +46,15 @@ CREATE TABLE `mahasiswas` (
 -- Dumping data for table `mahasiswas`
 --
 
-INSERT INTO `mahasiswas` (`id`, `nama`, `email`, `tgl_lahir`, `telp`, `gender`, `pekerjaan`, `date_create`, `alamat`, `jurusan`) VALUES
-(1, 'sidhiek ardhiansah', NULL, NULL, NULL, NULL, NULL, '2020-12-12 15:17:05', 'Grombyang', 'Pengen mulih'),
-(9, 'Sidik', '', '0000-00-00', 0, '0', 'Pelajar', '2020-12-10 10:19:27', NULL, NULL),
-(10, 'Sidik', '', '0000-00-00', 0, '0', 'Pelajar', '2020-12-10 10:19:43', NULL, NULL),
-(11, 'sidik', 'figifs@gmail.com', '2020-07-07', 6588, '0', 'Pelajar', '2020-12-10 10:21:26', NULL, NULL),
-(12, 'gatot', NULL, NULL, NULL, NULL, NULL, '2020-12-10 10:30:44', NULL, NULL),
-(14, 'Sidhiek ardhiansah', 'Hdjd@gmail.com', '2016-05-12', 85649464, '0', 'Pelajar', NULL, NULL, NULL),
-(15, 'Wawan', 'Wawan@gmail.com', '2016-05-19', 86494644, '0', 'pns', NULL, NULL, NULL),
-(16, 'Paijo', 'Paijo@gmail.com', '2016-06-01', 49494, '0', 'Pelajar', NULL, NULL, NULL),
-(17, 'Yeueue', 'Hsue@gmail.com', '2016-06-01', 576565, '0', 'pns', NULL, NULL, NULL),
-(18, 'Gshs', NULL, NULL, NULL, NULL, NULL, NULL, 'Hshhs', 'Hdhdhd'),
-(19, 'Wawan', NULL, NULL, NULL, NULL, NULL, '2020-12-11 17:11:19', 'Hshhs', 'Hdhdhd'),
-(20, 'Baskoro', NULL, NULL, NULL, NULL, NULL, '2020-12-11 17:11:38', 'Solo', 'IT'),
-(21, 'Paiman', NULL, NULL, NULL, NULL, NULL, '2020-12-12 15:16:09', 'Wonogiri', 'Elektro');
+INSERT INTO `mahasiswas` (`id`, `nama`, `email`, `tgl_lahir`, `telp`, `image`, `gender`, `pekerjaan`, `date_create`, `alamat`, `jurusan`) VALUES
+(27, 'adit', NULL, NULL, 10, 'editform.png', NULL, NULL, '2020-12-26 15:04:00', NULL, NULL),
+(35, 'adit', NULL, NULL, 7, 'editform.png', NULL, NULL, '2020-12-26 15:04:01', NULL, NULL),
+(61, 'Sukaina haddad', NULL, NULL, 6, NULL, NULL, NULL, '2020-12-26 15:04:01', '', ''),
+(62, 'Linta uliunha', NULL, NULL, 9, 'a6a6eede-4386-445d-98d2-9e2ec17694fc.jpg', NULL, NULL, '2020-12-26 15:04:01', 'Jakbar', 'Perawat'),
+(68, 'Sukaina haddad', NULL, NULL, 8, NULL, NULL, NULL, '2020-12-26 15:04:01', 'Cantik', 'Sekali'),
+(69, 'ardhi', 'ardhi@gmail.com', NULL, 85857464, 'editform.png', NULL, NULL, '2020-12-28 04:22:41', NULL, NULL),
+(70, 'Sidik', NULL, NULL, NULL, NULL, NULL, NULL, '2020-12-28 06:48:08', 'Solo', 'iT'),
+(71, 'ardhi', 'ardhi@gmail.com', NULL, 85857464, 'editform.png', NULL, NULL, '2020-12-28 08:02:48', NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -78,7 +74,7 @@ ALTER TABLE `mahasiswas`
 -- AUTO_INCREMENT for table `mahasiswas`
 --
 ALTER TABLE `mahasiswas`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
